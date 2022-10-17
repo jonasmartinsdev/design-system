@@ -2,11 +2,11 @@ name: Deploy docs
 
 on:
   push:
-  branches: 
-    - main
+    branches:
+      - main
 
 jobs:
-  build-an-deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
