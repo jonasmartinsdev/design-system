@@ -1,24 +1,21 @@
 import * as TooltipPrimitive from '@radix-ui/react-tooltip'
 import { ComponentProps, ReactNode } from 'react'
-import { Text } from '../Text'
-import { TooltipContainer } from './styles'
+import { TooltipArrow, TooltipContent } from './styles'
 
 export interface TooltipProps
   extends ComponentProps<typeof TooltipPrimitive.Root> {
-  content: ReactNode
+  content: string | ReactNode
 }
 
-export function Tooltip({ children, content }: TooltipProps) {
+export function Tooltip({ children, content, ...props }: TooltipProps) {
   return (
     <TooltipPrimitive.Provider>
-      <TooltipPrimitive.Root>
+      <TooltipPrimitive.Root {...props}>
         <TooltipPrimitive.Trigger asChild>{children}</TooltipPrimitive.Trigger>
-        <TooltipContainer>
-          <Text size={'sm'} css={{ fontWeight: '$medium' }}>
-            {content}
-          </Text>
-          <TooltipPrimitive.Arrow />
-        </TooltipContainer>
+        <TooltipContent>
+          {content}
+          <TooltipArrow />
+        </TooltipContent>
       </TooltipPrimitive.Root>
     </TooltipPrimitive.Provider>
   )

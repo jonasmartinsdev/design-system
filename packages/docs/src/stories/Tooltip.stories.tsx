@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Tooltip, TooltipProps, Text } from '@jonas-ui/react'
+import { Tooltip, TooltipProps, Button } from '@jonas-ui/react'
 
 export default {
   title: 'Overlay/Tooltip',
   component: Tooltip,
   args: {
-    children: <Text>Lorem Ipsum</Text>,
+    children: <Button>Hover me</Button>,
     content: '21 de Outubro - Indisponível',
   },
   argTypes: {
@@ -15,6 +15,7 @@ export default {
       },
     },
   },
+
   parameters: {
     layout: 'centered',
   },
